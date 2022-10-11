@@ -1,8 +1,10 @@
 # Ubuntu Autoinstall Generator
+Based on: https://github.com/eNBeWe/ubuntu-autoinstall-generator and https://github.com/covertsh/ubuntu-autoinstall-generator
+
 A script to generate a fully-automated ISO image for installing Ubuntu onto a machine without human interaction. This uses the new autoinstall method
 for Ubuntu 20.04 and newer.
 
-## [Looking for the desktop version?](https://github.com/covertsh/ubuntu-preseed-iso-generator)
+First time through I went through manual install. Then you will find /var/log/installer has yaml files that can be used as a template for the actual autoinstall.yaml that you want. This is what I then constructed to replace Debian installer preseed with aoutinstall.
 
 ### Behavior
 Check out the usage information below for arguments. The basic idea is to take an unmodified Ubuntu ISO image, extract it, add some kernel command line parameters, then repack the data into a new ISO. This is needed for full automation because the ```autoinstall``` parameter must be present on the kernel command line, otherwise the installer will wait for a human to confirm. This script automates the process of creating an ISO with this built-in.
@@ -27,7 +29,7 @@ Tested on a host running Ubuntu 20.04.1.
 
 ### Usage
 ```
-Usage: ubuntu-autoinstall-generator.sh [-h] [-v] [-a] [-e] [-u user-data-file] [-m meta-data-file] [-k] [-c] [-r] [-s source-iso-file] [-d destination-iso-file]
+Usage: ubuntu-autoinstall-generator.sh [-h] [-v] [-a] [-e] [-u user-data-file] [-m meta-data-file] [-k] [-c] [-r] [-s source-iso-file] [-d destination-iso-file] [-x extra-file-or-folder-path]
 
 💁 This script will create fully-automated Ubuntu 20.04 Focal Fossa installation media.
 
@@ -55,6 +57,8 @@ Available options:
                         That file will be used by default if it already exists.
 -d, --destination       Destination ISO file. By default <script directory>/ubuntu-autoinstall-<current date>.iso will be
                         created, overwriting any existing file.
+-x, --extra-file        Additional file or files using standard folder / file wildcards to include in the image.
+                        Used for customisations of the image for specific deployment purposes
 ```
 
 ### Example
