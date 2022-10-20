@@ -18,6 +18,8 @@ This script can use an existing ISO image or download the latest daily image fro
 
 By default, the source ISO image is checked for integrity and authenticity using GPG. This can be disabled with ```-k```.
 
+Get data from: https://askubuntu.com/questions/1235529/server-autoinstall-how-to-customise-storage-section/1255015#1255015]
+
 ### Requirements
 Tested on a host running Ubuntu 20.04.1.
 - Utilities required:
