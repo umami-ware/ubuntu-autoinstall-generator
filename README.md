@@ -63,7 +63,7 @@ Available options:
                         Used for customisations of the image for specific deployment purposes
 ```
 
-```sudo bash ubuntu-autoinstall-generator.sh -u user-data.example -d generated-output.iso```
+```sudo bash ubuntu-autoinstall-generator.sh -a -u user-data.example -d generated-output.iso```
 
 ### Example
 ```
